@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   CheckIcon,
   ClockIcon,
-  Instagram,
+  Globe,
   LockIcon,
   MapPinIcon,
   ShieldCheckIcon } from
@@ -186,7 +186,7 @@ export function VotingClosed({
         href="#"
         className="mt-4 flex items-center justify-center gap-2 rounded-sm border border-line bg-ink-900 py-3 text-sm font-bold text-fg-soft transition-colors duration-150 hover:border-brand/50 hover:text-brand">
         
-        <Instagram className="h-4 w-4" strokeWidth={2} />
+        <Globe className="h-4 w-4" strokeWidth={2} />
         Follow the championship
       </a>
     </div>);
