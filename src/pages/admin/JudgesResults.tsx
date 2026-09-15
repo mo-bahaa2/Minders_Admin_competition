@@ -50,7 +50,12 @@ export function JudgesResults() {
             </thead>
             <tbody>
               {teams.map((team) => {
-                const row = results.find((r) => r.team.id === team.id)!;
+                const row = results.find((r) => r.team.id === team.id) || {
+                  rank: 0,
+                  points: 0,
+                  judgeAvg: 0,
+                  judgesPct: 0
+                };
                 return (
                   <tr key={team.id} className="border-b border-line/70">
                     <td className="px-5 py-3">

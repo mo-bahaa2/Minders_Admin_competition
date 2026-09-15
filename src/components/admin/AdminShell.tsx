@@ -57,9 +57,14 @@ export function AdminShell({ children }: {children: React.ReactNode;}) {
         </NavLink>
     )}
       <a
-      href="/stage"
-      target="_blank"
+      href="http://localhost:5174/"
+      target="display_window"
       rel="noreferrer"
+      onClick={(e) => {
+        e.preventDefault();
+        const win = window.open('http://localhost:5174/', 'display_window');
+        if (win) (window as any).__DISPLAY_WINDOW__ = win;
+      }}
       className="mt-3 flex h-11 items-center gap-3 rounded-sm border border-line px-3 text-sm font-bold text-fg-muted transition-colors duration-150 hover:border-brand/50 hover:text-brand">
       
         <ExternalLinkIcon className="h-4 w-4" strokeWidth={2} />

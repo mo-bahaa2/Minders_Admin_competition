@@ -17,7 +17,12 @@ export function TeamsAdmin() {
       
       <ul className="grid gap-3 xl:grid-cols-2">
         {teams.map((team) => {
-          const row = results.find((r) => r.team.id === team.id)!;
+          const row = results.find((r) => r.team.id === team.id) || {
+            rank: 0,
+            points: 0,
+            judgeAvg: 0,
+            finalPct: 0
+          };
           return (
             <li
               key={team.id}
