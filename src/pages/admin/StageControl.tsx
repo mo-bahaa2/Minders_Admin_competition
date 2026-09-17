@@ -44,7 +44,15 @@ export function StageControl() {
         <StagePreview />
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
           <TechLabel>1920 × 1080 · 16:9 output · mirrored live</TechLabel>
-          <a href="/stage" target="_blank" rel="noreferrer">
+          <a
+            href="https://display-screen-minders.vercel.app/"
+            target="display_window"
+            rel="noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              const win = window.open('https://display-screen-minders.vercel.app/', 'display_window');
+              if (win) (window as any).__DISPLAY_WINDOW__ = win;
+            }}>
             <Button
               variant="outline"
               size="sm"
