@@ -4,17 +4,19 @@ import { TeamResult } from '../../types/event';
 import { AnimatedNumber } from '../ui/AnimatedNumber';
 import { TeamMark } from '../ui/TeamMark';
 
+import { Trophy } from 'lucide-react';
+import { Fireworks } from '../ui/Fireworks';
+
 const ease = [0.23, 1, 0.32, 1] as const;
 
 export function WinnerReveal({
   winner,
   runnersUp
-
-
-
 }: {winner: TeamResult;runnersUp: TeamResult[];}) {
   return (
     <div className="relative mx-auto w-full max-w-[1500px]">
+      <Fireworks />
+      
       {/* controlled stage lighting: two slow yellow sweeps, no confetti */}
       <motion.div
         aria-hidden
@@ -37,9 +39,9 @@ export function WinnerReveal({
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.35, duration: 0.28, ease }}
-          className="mt-8">
+          className="mt-8 flex h-[150px] w-[150px] items-center justify-center rounded-sm border border-brand-shade bg-brand">
           
-          <TeamMark team={winner.team} size={150} active />
+          <Trophy className="h-20 w-20 text-ink-950" strokeWidth={1.5} />
         </motion.div>
 
         <motion.h1
