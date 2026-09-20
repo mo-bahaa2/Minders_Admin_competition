@@ -72,9 +72,8 @@ export function WinnerReveal({
           </div>
           <div className="hidden h-20 w-px bg-line sm:block" aria-hidden />
           <div className="hidden text-left sm:block">
-            <div className="text-[11px] font-extrabold uppercase tracking-tech text-fg-muted lg:text-sm">
-              Judges {winner.judgesPct.toFixed(0)}% · Audience{' '}
-              {winner.audiencePct.toFixed(0)}%
+            <div className="mt-4 text-[13px] font-extrabold uppercase tracking-widest text-brand lg:text-sm">
+              Total Score: {winner.finalPct.toFixed(0)}%
             </div>
             <div className="mt-2 text-2xl font-extrabold text-fg-soft lg:text-4xl">
               Congratulations!

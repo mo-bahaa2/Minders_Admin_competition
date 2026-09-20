@@ -42,23 +42,6 @@ export function StageMessage({
           {support}
         </p>
       }
-      {sponsors &&
-      <div className="mt-14 w-full border-t border-line pt-8">
-          <div className="text-[11px] font-extrabold uppercase tracking-tech text-fg-dim">
-            Presented with
-          </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
-            {sponsors.map((s) =>
-          <span
-            key={s}
-            className="rounded-sm border border-line bg-ink-900 px-6 py-3 text-base font-extrabold tracking-tech text-fg-muted">
-            
-                {s}
-              </span>
-          )}
-          </div>
-        </div>
-      }
       {footnote &&
       <div className="mt-10 rounded-sm border border-line bg-ink-900 px-5 py-2.5 text-xs font-extrabold uppercase tracking-tech text-fg-dim">
           {footnote}

@@ -76,8 +76,9 @@ export function StageDisplay() {
       return (
         <StageFrame {...frameProps} totalVotes={votes.length}>
           <StageBoard
+            results={results}
             title="Combined Results"
-            subtitle="Judges 60% + Audience 40%"
+            subtitle=""
             rows={results}
             metric={(r) => r.finalPct}
             lastMover={lastMover} />
@@ -94,10 +95,9 @@ export function StageDisplay() {
           totalVotes={votes.length}>
           
           <StageMessage
-            eyebrow="Voting is open"
-            headline="Scan · Rank · Vote"
-            support="Choose your top 3 teams on your phone. Results reveal on this screen."
-            footnote={`Ballots received: ${votes.length}`} />
+            eyebrow="Live Voting"
+            headline="Voting is Open"
+            support="Scan the QR code to submit your ballot" />
           
         </StageFrame>);
 
@@ -150,9 +150,9 @@ export function StageDisplay() {
       return (
         <StageFrame {...frameProps}>
           <StageMessage
-            eyebrow="Starting shortly"
-            headline="Take Your Seats"
-            support="Five teams. One stage. Your vote decides 40% of the result."
+            eyebrow="Please Take Your Seats"
+            headline="Voting Starts Soon"
+            support="Five teams. One stage. Your vote makes the difference."
             showLogo />
           
         </StageFrame>);

@@ -32,9 +32,6 @@ export function StageFrame({
             <div className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl">
               {eventName}
             </div>
-            <div className="mt-1 text-[11px] font-bold uppercase tracking-tech text-fg-muted">
-              {round}
-            </div>
           </div>
         </div>
         <div className="flex items-center gap-8">
