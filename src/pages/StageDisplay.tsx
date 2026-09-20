@@ -76,7 +76,6 @@ export function StageDisplay() {
       return (
         <StageFrame {...frameProps} totalVotes={votes.length}>
           <StageBoard
-            results={results}
             title="Combined Results"
             subtitle=""
             rows={results}
