@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { LogoMark } from '../brand/Logo';
 import { Led } from '../ui/Status';
 import { clock } from '../../utils/scoring';
@@ -71,7 +72,18 @@ export function StageFrame({
       </header>
 
       <main className="relative flex flex-1 flex-col justify-center px-8 py-8 lg:px-12">
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={String((children as any)?.type?.name || Math.random())}
+            initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: -15, filter: 'blur(4px)' }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            className="flex h-full w-full flex-col justify-center"
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {ticker &&
