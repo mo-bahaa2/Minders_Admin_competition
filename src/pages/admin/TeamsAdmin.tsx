@@ -21,7 +21,9 @@ export function TeamsAdmin() {
             rank: 0,
             points: 0,
             judgeAvg: 0,
-            finalPct: 0
+            finalPct: 0,
+            audiencePct: 0,
+            judgesPct: 0
           };
           return (
             <li
