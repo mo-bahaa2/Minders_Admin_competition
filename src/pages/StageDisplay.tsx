@@ -51,7 +51,7 @@ export function StageDisplay() {
           
           <StageBoard
             title="Audience Results"
-            subtitle={`${settings.audienceWeight}% of final score · 3-2-1 points`}
+            subtitle={`${settings.audienceWeight} pts of final score · 3-2-1 points`}
             rows={audienceRows}
             metric={(r) => r.audiencePct}
             lastMover={lastMover} />
@@ -64,13 +64,13 @@ export function StageDisplay() {
         <StageFrame {...frameProps} totalVotes={votes.length}>
           <StageBoard
             title="Judges Results"
-            subtitle={`${settings.judgesWeight}% of final score · scored 1–5`}
+            subtitle={`${settings.judgesWeight} pts of final score · scored 1–5`}
             rows={judgeRows}
             metric={(r) => r.judgesPct}
             lastMover={null} />
           
-        </StageFrame>);
-
+        </StageFrame>
+      );
 
     case 'combined':
       return (

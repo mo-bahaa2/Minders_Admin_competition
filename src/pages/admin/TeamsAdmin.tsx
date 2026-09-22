@@ -64,9 +64,9 @@ export function TeamsAdmin() {
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3 border-t border-line pt-4">
                 {[
-                ['النقاط', `${row.points}`],
-                ['الحكام', `${row.judgeAvg.toFixed(1)}/5`],
-                ['النهائي', `${row.finalPct.toFixed(1)}%`]].
+                ['الجمهور', `${row.audiencePct.toFixed(1)} pts`],
+                ['الحكام', `${row.judgesPct.toFixed(1)} pts`],
+                ['النهائي', `${row.finalPct.toFixed(1)} pts`]].
                 map(([k, v]) =>
                 <div key={k}>
                     <TechLabel>{k}</TechLabel>

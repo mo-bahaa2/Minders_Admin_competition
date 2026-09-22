@@ -91,7 +91,7 @@ export function Overview() {
           index="05"
           label="المتصدر الحالي"
           value={leader?.team.name.replace('Team ', '') || '—'}
-          sub={leader ? `${leader.finalPct.toFixed(1)}% مجمعة` : ''}
+          sub={leader ? `${leader.finalPct.toFixed(1)} pts مجمعة` : ''}
           icon={<TrophyIcon className="h-4 w-4" strokeWidth={2} />} />
         
       </div>

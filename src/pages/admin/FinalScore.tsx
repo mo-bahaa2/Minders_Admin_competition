@@ -62,11 +62,11 @@ export function FinalScore() {
                 <div className="num text-right">
                   <TechLabel>Final</TechLabel>
                   <div
-                  className={`text-3xl font-extrabold leading-none ${
-                  r.rank === 1 ? 'text-brand' : 'text-fg'}`
-                  }>
-                  
-                    {r.finalPct.toFixed(1)}%
+                    className={`text-3xl font-extrabold leading-none ${
+                      r.rank === 1 ? 'text-brand' : 'text-fg'
+                    }`}
+                  >
+                    {r.finalPct.toFixed(1)} pts
                   </div>
                 </div>
               </div>
@@ -74,30 +74,24 @@ export function FinalScore() {
               <div className="mt-4 grid gap-4 border-t border-line pt-4 sm:grid-cols-2">
                 <div>
                   <div className="flex items-baseline justify-between">
-                    <TechLabel>Audience · ×{settings.audienceWeight}%</TechLabel>
+                    <TechLabel>Audience Points</TechLabel>
                     <span className="num text-sm font-extrabold text-fg">
-                      {r.audiencePct.toFixed(1)}% →{' '}
-                      <span className="text-brand">
-                        {(r.audiencePct * settings.audienceWeight / 100).toFixed(1)}
-                      </span>
+                      {r.audiencePct.toFixed(1)} pts
                     </span>
                   </div>
                   <div className="mt-2">
-                    <Meter value={r.audiencePct} tone="neutral" height={8} />
+                    <Meter value={r.audiencePct} max={r.finalPct || 1} tone="neutral" height={8} />
                   </div>
                 </div>
                 <div>
                   <div className="flex items-baseline justify-between">
-                    <TechLabel>Judges · ×{settings.judgesWeight}%</TechLabel>
+                    <TechLabel>Judges Points</TechLabel>
                     <span className="num text-sm font-extrabold text-fg">
-                      {r.judgesPct.toFixed(1)}% →{' '}
-                      <span className="text-brand">
-                        {(r.judgesPct * settings.judgesWeight / 100).toFixed(1)}
-                      </span>
+                      {r.judgesPct.toFixed(1)} pts
                     </span>
                   </div>
                   <div className="mt-2">
-                    <Meter value={r.judgesPct} height={8} />
+                    <Meter value={r.judgesPct} max={r.finalPct || 1} height={8} />
                   </div>
                 </div>
               </div>
@@ -113,7 +107,7 @@ export function FinalScore() {
           </span>
           <div className="min-w-0 flex-1">
             <h3 className="text-lg font-extrabold text-fg">
-              {results[0]?.team.name} · {results[0]?.finalPct.toFixed(1)}%
+              {results[0]?.team.name} · {results[0]?.finalPct.toFixed(1)} pts
             </h3>
             <p className="mt-1 text-xs font-semibold text-fg-muted">
               Publishing pushes the winner reveal to the stage screen
@@ -134,7 +128,7 @@ export function FinalScore() {
       <ConfirmModal
         open={confirm}
         title="Publish the winner to stage?"
-        body={`${results[0]?.team.name} will be revealed on the main screen with a final score of ${results[0]?.finalPct.toFixed(1)}%.`}
+        body={`${results[0]?.team.name} will be revealed on the main screen with a final score of ${results[0]?.finalPct.toFixed(1)} pts.`}
         confirmLabel="Publish winner"
         destructive={false}
         onConfirm={() => {

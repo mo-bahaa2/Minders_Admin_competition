@@ -152,7 +152,7 @@ export function StageControl() {
       <ConfirmModal
         open={confirm}
         title="هل تريد عرض الفائز على الشاشة الرئيسية؟"
-        body={`${results[0]?.team.name} will be announced at ${results[0]?.finalPct.toFixed(1)}%. This replaces whatever is currently on air.`}
+        body={`${results[0]?.team.name} will be announced at ${results[0]?.finalPct.toFixed(1)} pts. This replaces whatever is currently on air.`}
         confirmLabel="نعم، أعلن الفائز"
         destructive={false}
         onConfirm={() => {

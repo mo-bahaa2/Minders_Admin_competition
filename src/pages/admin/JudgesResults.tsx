@@ -44,7 +44,7 @@ export function JudgesResults() {
                   Average
                 </th>
                 <th className="px-5 py-3 text-right text-[10px] font-extrabold uppercase tracking-tech text-fg-muted">
-                  Percentage
+                  Points
                 </th>
               </tr>
             </thead>
@@ -84,7 +84,7 @@ export function JudgesResults() {
                       <span className="text-sm text-fg-dim"> pts</span>
                     </td>
                     <td className="num px-5 py-3 text-right text-lg font-extrabold text-brand">
-                      {row.judgesPct.toFixed(0)}%
+                      {row.judgesPct.toFixed(1)} pts
                     </td>
                   </tr>);
 
@@ -94,7 +94,7 @@ export function JudgesResults() {
         </div>
         <div className="border-t border-line px-5 py-3">
           <TechLabel>
-            Judges panel carries {settings.judgesWeight}% of the final score
+            Judges panel carries {settings.judgesWeight} pts max of the final score
           </TechLabel>
         </div>
       </Panel>
@@ -113,10 +113,10 @@ export function JudgesResults() {
                 {r.team.name}
               </span>
               <div className="flex-1">
-                <Meter value={r.judgesPct} tone={r.rank === 1 ? 'brand' : 'neutral'} />
+                <Meter value={r.judgesPct} max={r.finalPct || 1} tone={r.rank === 1 ? 'brand' : 'neutral'} />
               </div>
-              <span className="num w-16 text-right text-lg font-extrabold text-brand">
-                {r.judgesPct.toFixed(0)}%
+              <span className="num w-20 text-right text-lg font-extrabold text-brand">
+                {r.judgesPct.toFixed(1)} pts
               </span>
             </li>
           )}

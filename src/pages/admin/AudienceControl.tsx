@@ -155,7 +155,7 @@ export function AudienceControl() {
                   {r.points} pts
                 </span>
                 <span className="num w-20 text-right text-lg font-extrabold text-brand">
-                  {r.audiencePct.toFixed(1)}%
+                  {r.audiencePct.toFixed(1)} pts
                 </span>
               </li>
             )}
